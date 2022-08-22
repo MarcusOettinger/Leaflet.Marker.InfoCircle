@@ -1,3 +1,8 @@
+//
+// Leaflet.Marker.InfoCircle.js
+// (see https://github.com/MarcusOettinger/Leaflet.Marker.InfoCircle)
+// M. Oettinger 2022
+//
 L.Marker.InfoCircle = L.Marker.extend({
 
 	options: {
@@ -29,24 +34,25 @@ L.Marker.InfoCircle = L.Marker.extend({
 	},
 
 
-	/**
+	/** @constructor
 	  * initialize: construct a simple iconMarker
+	  * @parameter latlng
+	  * @parameter options
 	  */
 	initialize: function (latlng, options) {
 		L.setOptions(this, options);
 
-		var size = this.options.radius * 2,
-		    bw = this.options.borderWidth,
-		    cSize = size + (this.options.borderWidth * 2),
+		var cSize = this.options.radius * 2 + (this.options.borderWidth * 2),
 		    html = '<span class="circle ' + options.circleClass
-		         + '" style="width:' + cSize + 'px; height:' + cSize + 'px; borderwidth:' 
-		         + bw + 'px">' + this.options.text +'</span>';
+		         + '" style="width:' + cSize + 'px; height:' + cSize 
+			 + 'px; borderwidth:' + this.options.borderWidth
+			 + 'px">' + this.options.text +'</span>';
 	    
 		this._latlng = L.latLng(latlng);
 		
 		icon = L.divIcon({
     			html: html,
-    			className: '',  //'circle ' + options.circleClass,
+    			className: '',
     			iconSize: [cSize, cSize]
   		});
   		this.setIcon(icon);
@@ -54,7 +60,6 @@ L.Marker.InfoCircle = L.Marker.extend({
 
 
 });
-
 
 L.marker.InfoCircle = function(latlng, options) {
 	return new Marker.InfoCircle( latlng, options );
