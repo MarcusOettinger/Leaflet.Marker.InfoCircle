@@ -1,0 +1,34 @@
+/*
+ * Leaflet.Marker.InfoCircle.css 
+ * (see https://github.com/MarcusOettinger/Leaflet.Marker.InfoCircle)
+ * css styling of the markers.
+ * M. Oettinger 2022
+ */
+
+/* class circle is set to all markers automagically
+ */
+.circle {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    border-style: solid;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+/* use your own classes (e.g. circle1, ...) for further
+ * styling of markers
+ */
+  .circle.circle1 {
+    background: rgba(0, 57, 128, 0.2);
+    border-color: #3388FF;
+    color: white;
+  }
+  
+  .circle.circle2 {
+  border-radius: 0;
+    background: rgba(0, 57, 128, 0.2);
+    border-color: green;
+    color: yellow;
+  }
