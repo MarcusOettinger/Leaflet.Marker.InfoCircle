@@ -41,7 +41,7 @@
 &lt;script src="Leaflet.Marker.InfoCircle.js"&gt;&lt;/script&gt;
 &lt;link href="Leaflet.Marker.InfoCircle.css" rel="stylesheet"/&gt;
 </pre></code></div>
-  <p>and use the new marker with some new options (this is the first entry in the example below): </p>
+  <p>and use the new marker with some new options (this is the first entry in the example above): </p>
 <div><code><pre>
   var info1 = new L.Marker.InfoCircle( map.getCenter(), {
           text: "foo", 
@@ -50,8 +50,13 @@
   info1.bindPopup("&lt;h2&gt;A popup&lt;/h2&gt;(you guessed that...)&lt;br&gt;").openPopup();
 </pre></code></div> 
 <h3 id="options">Options</h3>
-<p>all options?</p>
-
+<p>Leaflet.Marker.InfoCircle brings some new options to be set in the constructor:</p>
+  <ul>
+    <li>text: the string displayed in the marker</li>
+    <li>radius: radius of the circle in px</li>
+    <li>borderWidth: width of the border in px</li>
+    <li>circleClass: a class to set to the marker to allow for css styling</li>
+  </ul>
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/MarcusOettinger/Leaflet.Marker.InfoCircle">Leaflet.Marker.InfoCircle</a> is maintained by <a href="https://github.com/MarcusOettinger">MarcusOettinger</a>.</span>
 
