@@ -33,18 +33,21 @@
 
 <p>Leaflet.Marker.InfoCircle is a dead simple leaflet plugin for a marker similar to L.CircleMarker
    to display a string or number in the circle.</p>
-
+<div id="map"></div>
 <h3 id="numbers">Usage</h3>
   <p>Just include js and css files</p>
 <div><code><pre>
-Hallo
-
+&lt;script src="Leaflet.Marker.InfoCircle.js"&gt;&lt;/script&gt;
+&lt;link href="Leaflet.Marker.InfoCircle.css" rel="stylesheet"/&gt;
 </pre></code></div>
   <p>and use the new marker with some new options (this is the first entry in the example below): </p>
 <div><code><pre>
-  var info1 = new L.Marker.InfoCircle( map.getCenter(), {text: "foo", circleClass: "circle1"}).addTo(map)
-</pre></code></div>
-<div id="map"></div> 
+  var info1 = new L.Marker.InfoCircle( map.getCenter(), {
+          text: "foo", 
+          circleClass: "circle1"
+  }).addTo(map);
+  info1.bindPopup("A popup (you guessed that...)").openPopup();
+</pre></code></div> 
 <h3 id="options">Options</h3>
 <p>all options?</p>
 
@@ -64,7 +67,8 @@ Hallo
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      var info1 = new L.Marker.InfoCircle( map.getCenter(), {text: "foo", circleClass: "circle1"}).addTo(map),
+      var info1 = new L.Marker.InfoCircle( map.getCenter(), {text: "foo", circleClass: "circle1"}).addTo(map)
+                                         .bindPopup("A popup (you guessed that...)"),
           info2 = new L.Marker.InfoCircle( [52.51, 13.413215], {text: "bar", circleClass: "circle1", radius: 40}).addTo(map),
           info3 = new L.Marker.InfoCircle( [52.521918, 13.38], {text: "1.21", circleClass: "circle2"}).addTo(map);
 </script>  
