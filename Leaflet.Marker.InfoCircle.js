@@ -1,8 +1,11 @@
-//
 // Leaflet.Marker.InfoCircle.js
 // (see https://github.com/MarcusOettinger/Leaflet.Marker.InfoCircle)
 // M. Oettinger 2022
-//
+/** @class
+  * A simple circular marker for Leaflet displaying text or numbers.
+  * @author Marcus Oettinger <info@oettinger-physics.de>
+  * @license The Unlicense
+  */
 L.Marker.InfoCircle = L.Marker.extend({
 
 	options: {
@@ -56,9 +59,7 @@ L.Marker.InfoCircle = L.Marker.extend({
     			iconSize: [cSize, cSize]
   		});
   		this.setIcon(icon);
-	},
-
-
+	}
 });
 
 L.marker.InfoCircle = function(latlng, options) {
