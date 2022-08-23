@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Leaflet.Marker.InfoCircle</title>
-
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <link href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" rel="stylesheet"/>
+  <title>Leaflet.Marker.InfoCircle example</title>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet"/>
   <script src="Leaflet.Marker.InfoCircle.js"></script>
   <link href="Leaflet.Marker.InfoCircle.css" rel="stylesheet"/>
 
@@ -35,9 +34,12 @@
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      var info1 = new L.Marker.InfoCircle( map.getCenter(), {text: "foo", circleClass: "circle1"}).addTo(map),
-          info2 = new L.Marker.InfoCircle( [52.51, 13.413215], {text: "bar", circleClass: "circle1", radius: 40}).addTo(map),
-          info3 = new L.Marker.InfoCircle( [52.521918, 13.38], {text: "1.21", circleClass: "circle2"}).addTo(map);
+      var info1 = new L.Marker.InfoCircle( map.getCenter(), {text: "foo", circleClass: "circle1"}).addTo(map)
+                                         .bindPopup("<h2>A popup</h2>(you guessed that...)<br>"),
+          info2 = new L.Marker.InfoCircle( [52.51, 13.413215], {text: "bar", circleClass: "circle1", radius: 40}).addTo(map)
+                                         .bindPopup("<h2>A popup</h2>(believe me?)<br>"),
+          info3 = new L.Marker.InfoCircle( [52.521918, 13.38], {text: "1.21", circleClass: "circle2"}).addTo(map)
+                                         .bindPopup("<h2>A popup</h2>(isn't it?)<br>");
 
   </script>
 </body>
