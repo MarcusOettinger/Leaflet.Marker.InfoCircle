@@ -27,8 +27,18 @@
   }
   
   .circle.circle2 {
-  border-radius: 0;
     background: rgba(0, 57, 128, 0.2);
     border-color: green;
     color: yellow;
   }
+
+ .circle.circle3 {
+    background-color: rgba(0, 57, 128, 0.2);
+    background-image: url('Donald-Duck-2-icon.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: green;
+    border-radius: 0;
+    color: yellow;
+  }
+
