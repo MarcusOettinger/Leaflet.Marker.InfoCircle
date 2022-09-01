@@ -1,8 +1,12 @@
-//
 // Leaflet.Marker.InfoCircle.js
 // (see https://github.com/MarcusOettinger/Leaflet.Marker.InfoCircle)
 // M. Oettinger 2022
-//
+
+/** @class
+  * A simple circular marker for Leaflet displaying text or numbers.
+  * @author Marcus Oettinger <info@oettinger-physics.de>
+  * @license The Unlicense
+  */
 L.Marker.InfoCircle = L.Marker.extend({
 
 	options: {
@@ -25,15 +29,14 @@ L.Marker.InfoCircle = L.Marker.extend({
 		borderWidth: 2,
 
 		/**
-		 * circleClass: string
+		 * @option circleClass: string
 		 * a class to set for the circle marker to allow for
 		 * further css-styling.
 		 */
 		circleClass: ""
 
 	},
-
-
+	
 	/** @constructor
 	  * initialize: construct a simple iconMarker
 	  * @parameter latlng
@@ -41,24 +44,38 @@ L.Marker.InfoCircle = L.Marker.extend({
 	  */
 	initialize: function (latlng, options) {
 		L.setOptions(this, options);
-
+		this._latlng = L.latLng(latlng);
+  		this.setIcon(this._mkIcon(this.options));
+	},
+	
+	/** 
+	  * _mkIcon: return a divIcon contining a span with
+	  * some css formatting.
+	  */
+	_mkIcon: function( ){
 		var cSize = this.options.radius * 2 + (this.options.borderWidth * 2),
-		    html = '<span class="circle ' + options.circleClass
+		    html = '<span class="circle ' + this.options.circleClass
 		         + '" style="width:' + cSize + 'px; height:' + cSize 
 			 + 'px; borderwidth:' + this.options.borderWidth
-			 + 'px">' + this.options.text +'</span>';
-	    
-		this._latlng = L.latLng(latlng);
-		
-		icon = L.divIcon({
+			 + 'px">' + this.options.text +'</span>',
+		    icon = L.divIcon({
     			html: html,
     			className: '',
     			iconSize: [cSize, cSize]
-  		});
-  		this.setIcon(icon);
+  		    });
+  		 return icon;
 	},
-
-
+	
+	/** 
+	  * setText: replace the string displayed in the IfoCircle.
+	  * @parameter text: a string to be displayed in the marker.
+	  */
+	setText: function ( text ) {
+		this.options.text = text;
+  		this.setIcon(this._mkIcon());
+	}
+	
+	
 });
 
 L.marker.InfoCircle = function(latlng, options) {
