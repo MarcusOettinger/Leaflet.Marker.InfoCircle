@@ -73,6 +73,14 @@ L.Marker.InfoCircle = L.Marker.extend({
 	setText: function ( text ) {
 		this.options.text = text;
   		this.setIcon(this._mkIcon());
+	},
+	
+	/** 
+	  * getText: return the string displayed in the IfoCircle.
+	  */
+	getText: function ( ) {
+		if ( this.options.text ) return this.options.text;
+		return '';
 	}
 	
 	
